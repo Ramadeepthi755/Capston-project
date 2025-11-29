@@ -82,7 +82,7 @@ This transforms generic chatbot replies into evidence-backed, reliable wellness 
 
 ## 🏗 Architecture Overview
 
-The heart of the system is the interactive_genwellness_agent — the main orchestrator built using ADK’s Agent class.
+The heart of the system is the interactive_genwellness_agent — the main orchestrator built using ADK’s `Agent` class.
 It defines:
 
 reasoning model
@@ -98,40 +98,40 @@ session & memory configuration
 This agent ensures smooth, validated, evidence-driven output.
 
 ## 🧩 Agents and Their Roles
-### 1️⃣ Symptom Analyzer — symptom_analyzer_agent
+### 1️⃣ Symptom Analyzer — `symptom_analyzer_agent`
 
 Converts raw user text into structured condition categories
 (e.g., dry_skin, acne, dandruff, hair_fall).
 
 ### Capabilities:
 
-Gemini + ML classifier (skin_condition_classifier_tool)
+Gemini + ML classifier (`skin_condition_classifier_tool`)
 
 Extracts triggers, severity, patterns
 
 Implemented as a LoopAgent
 
-Validated with SymptomValidationChecker
+Validated with `SymptomValidationChecker`
 
 Automatically retries until quality output
 
-### 2️⃣ Herbal Evidence Retrieval — herb_rag_agent
+### 2️⃣ Herbal Evidence Retrieval — `herb_rag_agent`
 
 The research expert of the system.
 
 ### Features:
 
-FAISS-based RAG (herb_search_tool)
+FAISS-based RAG (`herb_search_tool`)
 
 Scientific Google Search integration
 
 Retrieves evidence-backed herbal/ingredient data
 
-Validated with HerbEvidenceValidationChecker
+Validated with `HerbEvidenceValidationChecker`
 
 Ensures all suggestions are scientifically meaningful.
 
-### 3️⃣ Routine Generator — routine_generator_agent
+### 3️⃣ Routine Generator — `routine_generator_agent`
 
 Turns diagnosis + evidence into actionable routines.
 
@@ -143,16 +143,16 @@ Ingredient safety validation
 
 Long-term memory for skin type, allergies, preferences
 
-Validated using RoutineValidationChecker
+Validated using `RoutineValidationChecker`
 
 Delivers clear, safe, customized routines.
 
-### 4️⃣ Social Media Wellness Writer — social_media_agent
+### 4️⃣ Social Media Wellness Writer — `social_media_agent`
 
 Creates motivational posts and educational content
 to help users stay consistent with their routines.
 
-### 5️⃣ Evaluator Agent — a2a_evaluator_agent
+### 5️⃣ Evaluator Agent — `a2a_evaluator_agent`
 
 Internal quality assurance using the A2A protocol.
 
@@ -173,13 +173,13 @@ Ensures final output is reliable and safe.
 ## 🛠 Tools & ADK Features
 Custom Tools:
 
-herb_search_tool → FAISS RAG herbal evidence
+`herb_search_tool` → FAISS RAG herbal evidence
 
-skin_condition_classifier_tool → ML-based classification
+`skin_condition_classifier_tool` → ML-based classification
 
-memory_update_tool → long-term memory writing
+`memory_update_tool` → long-term memory writing
 
-save_plan_to_file → export routines
+`save_plan_to_file` → export routines
 
 Built-in Tools:
 
@@ -194,7 +194,7 @@ File Tool
 ✔ Multi-Agent Architecture
 ✔ LoopAgents + Validation Checkers
 ✔ Custom + Built-In Tools (MCP)
-✔ Sessions (InMemorySessionService)
+✔ Sessions (`InMemorySessionService`)
 ✔ MemoryBank
 ✔ OpenAPI Tool
 ✔ Observability (logs, tracing)
@@ -234,15 +234,15 @@ This is a production-grade AI wellness system.
 
 User: "I have dry, flaky skin on my cheeks."
 
-symptom_analyzer_agent → Dry Skin + Sensitivity
+`symptom_analyzer_agent` → Dry Skin + Sensitivity
 
-herb_rag_agent → Aloe Vera, Licorice, Manjistha
+`herb_rag_agent` → Aloe Vera, Licorice, Manjistha
 
-routine_generator_agent → Personalized AM/PM plan
+`routine_generator_agent` → Personalized AM/PM plan
 
-memory_update_tool → Records fragrance-free preference
+`memory_update_tool` → Records fragrance-free preference
 
-a2a_evaluator_agent → Scores clarity, safety, correctness
+`a2a_evaluator_agent` → Scores clarity, safety, correctness
 
 Final personalized routine delivered
 
@@ -293,3 +293,4 @@ Built fully with Google ADK, it is scalable, medically responsible, and producti
 ## 💡 Vision Statement
 
 To make expert-level skin and haircare guidance accessible to every person in the world using intelligent, collaborative AI agents.
+
