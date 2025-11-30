@@ -15,6 +15,15 @@ Simple FastAPI app that analyses skin/hair symptoms and returns recommendations.
   Input: { "topic": "skin", "symptom": "dry" }  
   Output: { "diagnosis": "...", "recommendations": ["..."], "explanation": "..." }
 
+## 🧠 Features  
+- Skin problem detection  
+- Hair problem detection  
+- Rule-based AI  
+- Clear recommendations  
+
+## 🔗 Notebook  
+https://www.kaggle.com/code/ramadeepthibadireddy/skin-hair-diagnosis-ai
+
 ## Notes
 This project uses local rule-based agent. For production, replace with Google Gemini / Vertex integration.
 
@@ -293,4 +302,5 @@ Built fully with Google ADK, it is scalable, medically responsible, and producti
 ## 💡 Vision Statement
 
 To make expert-level skin and haircare guidance accessible to every person in the world using intelligent, collaborative AI agents.
+
 
