@@ -1,0 +1,10 @@
+topic,symptom,condition,recommendation
+skin,dry,Dry Skin,"Apply moisturizer twice a day; drink more water."
+skin,acne,Acne,"Use salicylic acid face wash and avoid oily cosmetics."
+skin,oily,Oily Skin,"Use gel-based, oil-free moisturizers and mattifying products."
+skin,itchy,Allergy,"Use antihistamine/topical anti-itch cream and avoid triggers."
+skin,redness,Inflammation,"Use gentle cleanser and anti-inflammatory creams."
+hair,dry,Dry Scalp,"Massage coconut oil weekly and use gentle shampoo."
+hair,dandruff,Dandruff,"Use anti-dandruff shampoo (ketoconazole/selenium sulfide)."
+hair,fall,Hair Fall,"Use biotin/strengthening shampoo; check nutrition."
+hair,itchy,Scalp Allergy,"Use mild herbal shampoo; see dermatologist if persistent."

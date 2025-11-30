@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Skin & Hair Diagnosis AI</title>
+  <style>
+    body{font-family: Arial; padding:40px; max-width:800px; margin:auto;}
+    input, button {padding:8px; margin:6px 0; width:100%;}
+    #result {margin-top:12px; padding:10px; border:1px solid #ddd; min-height:40px;}
+  </style>
+</head>
+<body>
+  <h1>Skin & Hair Diagnosis AI</h1>
+  <label>Topic (e.g., skin)</label>
+  <input id="topic" value="skin" />
+  <label>Symptom (e.g., dry)</label>
+  <input id="symptom" value="dry" />
+  <button id="btn">Diagnose</button>
+  <div id="result">Result will appear here...</div>
+
+<script>
+const base = ""; // if hosting under server, change if needed
+document.getElementById("btn").onclick = async () => {
+  const topic = document.getElementById("topic").value;
+  const symptom = document.getElementById("symptom").value;
+  document.getElementById("result").innerText = "Loading...";
+  try {
+    const res = await fetch("http://127.0.0.1:8000/diagnose", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({topic, symptom})
+    });
+    if (!res.ok) {
+      const txt = await res.text();
+      document.getElementById("result").innerText = "Error: " + txt;
+      return;
+    }
+    const data = await res.json();
+    let html = "<strong>Predictions</strong><br>";
+    data.predictions.forEach(p=>{
+      html += `${p.label} — ${(p.score*100).toFixed(1)}% <br>`;
+    });
+    document.getElementById("result").innerHTML = html;
+  } catch (err) {
+    document.getElementById("result").innerText = "Request failed: "+err;
+  }
+}
+</script>
+</body>
+</html>

@@ -1,2 +1,14 @@
 fastapi==0.122.0
 uvicorn[standard]
+fastapi
+uvicorn[standard]
+scikit-learn
+pandas
+pickle5
+matplotlib
+seaborn
+fastapi==0.95.0
+uvicorn==0.21.1
+scikit-learn==1.2.2
+pandas==2.0.3
+numpy==1.25.0
