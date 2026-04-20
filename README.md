@@ -4,8 +4,8 @@
 Simple FastAPI app that analyses skin/hair symptoms and returns recommendations.
 
 ## How to run (local)
-1. python -m venv venv  
-2. Activate venv  
+1. python3 -m venv venv  
+2. Activate venv (source venv/bin/activate) 
 3. pip install -r requirements.txt  
 4. uvicorn app:app --reload --port 8000  
 5. Open http://127.0.0.1:8000/docs
